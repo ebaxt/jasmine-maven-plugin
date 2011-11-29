@@ -29,8 +29,7 @@
                     <jsTestSrcDir>${project.basedir}/src/test/specs</jsTestSrcDir>
                     <srcDirectoryName>js</srcDirectoryName>
                     <specDirectoryName>specs</specDirectoryName>
-                    <customRunnerConfiguration>${project.basedir}/src/test/resources/customJasmineConfig.txt}
-                    </customRunnerConfiguration>
+                    <customRunnerConfiguration>${project.basedir}/src/test/resources/customJasmineConfig.txt</customRunnerConfiguration>
                     <specIncludes>
                         <include>appSpec.js</include>
                     </specIncludes>

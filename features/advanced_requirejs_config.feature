@@ -9,7 +9,7 @@ Feature: Support custom require.js configuration
     Given I am currently in the "jasmine-webapp-advanced-requirejs" project
     When I run "mvn clean test"
     Then the build should succeed
-    And I should see "Results: 1 spec, 0 failures"
+    And I should see "Results: 1 specs, 0 failures"
 
   @server
   Scenario: project with javascript using require.js and custom configuration running in browser
