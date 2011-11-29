@@ -1,0 +1,1 @@
+describe(['order!jquery', 'order!specs/lib/jasmine-jquery.js'], function() {});
