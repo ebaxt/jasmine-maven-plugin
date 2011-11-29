@@ -24,6 +24,8 @@
                     </execution>
                 </executions>
                 <configuration>
+                    <srcDirectoryName>js</srcDirectoryName>
+                    <specDirectoryName>javascript</specDirectoryName>
                     <debug>true</debug>
                     <specRunnerTemplate>REQUIRE_JS</specRunnerTemplate>
                     <jsSrcDir>${project.basedir}/src/main/webapp/js</jsSrcDir>

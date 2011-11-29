@@ -84,6 +84,11 @@ public abstract class AbstractJasmineMojo extends AbstractMojo {
 	 * @parameter
 	 */
 	protected File customRunnerTemplate;
+
+	/**
+	 * @parameter
+	 */
+	protected File customRunnerConfiguration;
 	
 	/**
 	 * @parameter default-value="${project.build.directory}${file.separator}jasmine"
@@ -249,5 +254,9 @@ public abstract class AbstractJasmineMojo extends AbstractMojo {
 
 	public MavenProject getMavenProject() {
 		return mavenProject;
+	}
+
+	public File getCustomRunnerConfiguration() {
+		return customRunnerConfiguration;
 	}
 }

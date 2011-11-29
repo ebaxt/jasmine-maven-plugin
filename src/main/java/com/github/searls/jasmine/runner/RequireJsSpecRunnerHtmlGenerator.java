@@ -39,12 +39,20 @@ public class RequireJsSpecRunnerHtmlGenerator extends AbstractSpecRunnerHtmlGene
 		applyCssToTemplate(asList(JASMINE_CSS), template);
 		Set<String> preloads = getConfiguration().getPreloadsRelativePath();
 		template.setAttribute("priority", createArrayOfScripts(preloads));
+		setCustomConfig(template);
 		template.setAttribute(REPORTER_ATTR_NAME, getConfiguration().getReporterType().name());
-		template.setAttribute("sourceDir", sourceDirectory);
+//		template.setAttribute("sourceDir", sourceDirectory);
 		template.setAttribute("specs", createArrayOfScripts(specsRelativePath));
 		setEncoding(getConfiguration(), template);
 
 		return template.toString();
+	}
+
+	private void setCustomConfig(StringTemplate template) throws IOException {
+		String customConfig = getConfiguration().getCustomRunnerConfiguration();
+		if (null != customConfig) {
+			template.setAttribute("customConfig", customConfig);
+		}
 	}
 
 	private String createArrayOfScripts(Set<String> scripts) throws IOException {

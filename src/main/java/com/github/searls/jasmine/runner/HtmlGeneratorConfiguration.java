@@ -18,6 +18,7 @@ public class HtmlGeneratorConfiguration {
 	private String specRunnerTemplate;
 	private ScriptResolver scriptResolver;
 	private String sourceDirectoryRelativePath;
+	private File customRunnerConfiguration;
 
 
 	public HtmlGeneratorConfiguration(ReporterType reporterType, AbstractJasmineMojo configuration, ScriptResolver scriptResolver) throws IOException {
@@ -27,12 +28,14 @@ public class HtmlGeneratorConfiguration {
 		this.customRunnerTemplate = configuration.getCustomRunnerTemplate();
 		this.specRunnerTemplate = configuration.getSpecRunnerTemplate();
 		this.scriptResolver = scriptResolver;
+		this.customRunnerConfiguration = configuration.getCustomRunnerConfiguration();
 
 	}
 
 	public Set<String> getAllScripts() throws IOException {
 		return scriptResolver.getAllScripts();
 	}
+
 	public Set<String> getAllScriptsRelativePath() throws IOException {
 		return scriptResolver.getAllScriptsRelativePath();
 	}
@@ -65,6 +68,14 @@ public class HtmlGeneratorConfiguration {
 		}
 	}
 
+	public String getCustomRunnerConfiguration() throws IOException {
+		if (null != customRunnerConfiguration) {
+			return readFileToString(customRunnerConfiguration);
+		} else {
+			return null;
+		}
+	}
+
 	public String getSpecRunnerTemplate() {
 		return specRunnerTemplate;
 	}
@@ -81,7 +92,7 @@ public class HtmlGeneratorConfiguration {
 		return scriptResolver.getPreloads();
 	}
 
-		@Override
+	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;
 		if (o == null || getClass() != o.getClass()) return false;
@@ -109,16 +120,16 @@ public class HtmlGeneratorConfiguration {
 	}
 
 	public Set<String> getSpecsRelativePath() throws IOException {
-		return scriptResolver.getSpecsRelativePath	();
+		return scriptResolver.getSpecsRelativePath();
 	}
 
 	public String getSourceDirectoryRelativePath() throws IOException {
 		return scriptResolver.getSourceDirectoryRelativePath();
 	}
 
-    public Set<String> getPreloadsRelativePath() throws IOException {
-        return scriptResolver.getPreloadsRelativePath();
-    }
+	public Set<String> getPreloadsRelativePath() throws IOException {
+		return scriptResolver.getPreloadsRelativePath();
+	}
 }
 
 

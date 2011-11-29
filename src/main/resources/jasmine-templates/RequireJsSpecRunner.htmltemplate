@@ -15,9 +15,12 @@
 		var specs = $specs$;
 
 		require.config({
-		    baseUrl: '$sourceDir$'
+		    baseUrl: 'javascript'
 		    $if(priority)$
 		    , priority: $priority$
+		    $endif$
+		    $if(customConfig)$
+		    , $customConfig$
 		    $endif$
         });
 

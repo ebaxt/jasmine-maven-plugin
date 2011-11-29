@@ -15,6 +15,7 @@ import org.eclipse.jetty.server.handler.ResourceHandler;
 import org.eclipse.jetty.server.nio.SelectChannelConnector;
 import org.eclipse.jetty.util.resource.Resource;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Answers;
@@ -29,6 +30,7 @@ import com.github.searls.jasmine.model.ScriptSearch;
 import com.github.searls.jasmine.server.JasmineResourceHandler;
 
 @RunWith(MockitoJUnitRunner.class)
+@Ignore
 public class ServerMojoTest {
 
 	private static final String SPECS_DIR = "spec dir";
